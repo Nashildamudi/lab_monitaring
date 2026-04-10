@@ -1,0 +1,11 @@
+{
+  "server_url": "http://127.0.0.1:8000",
+  "name": "PC-1",
+  "token": "mkl38hlv9JGu7MIb0gn480h4oomwrH8t",
+  "banned_process_names": [
+    "chrome.exe",
+    "msedge.exe",
+    "firefox.exe"
+  ],
+  "heartbeat_interval_seconds": 5
+}

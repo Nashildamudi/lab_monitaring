@@ -1,0 +1,37 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# SQLite databases
+*.db
+*.sqlite3
+server/labmon.db
+
+# Log files
+*.log
+server_log.txt
+server_debug.log
+client/*.log
+
+# Downloaded or generated client files
+client/token.txt
+client/server_url.txt
+client/name.txt
+client/screenshot.jpg*
+
+# Server static uploaded files
+server/static/screenshots/
+
+# IDE files
+.vscode/
+.idea/

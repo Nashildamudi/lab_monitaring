@@ -1,0 +1,15 @@
+github.com
+*.github.com
+chat.openai.com
+chatgpt.com
+facebook.com
+*.facebook.com
+youtube.com
+*.youtube.com
+instagram.com
+*.instagram.com
+twitter.com
+x.com
+*.twitter.com
+reddit.com
+*.reddit.com

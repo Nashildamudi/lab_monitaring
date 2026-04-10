@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Smart Lab Monitoring</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+
+<body>
+  <div class="topbar">
+    <div class="brand">Smart Lab Monitoring</div>
+    <div class="auth">
+      <button id="toggleAudio" class="pill">🔇 Audio Off</button>
+      <input id="adminUser" placeholder="Username" />
+      <input id="adminPass" type="password" placeholder="Password" />
+      <button id="loginBtn">Login</button>
+      <span id="connStatus" class="pill">disconnected</span>
+    </div>
+  </div>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="title">Systems</div>
+        <button id="refreshClients">Refresh</button>
+      </div>
+      <div id="clients" class="clients"></div>
+
+      <div class="enroll">
+        <div class="title">Add Client</div>
+        <input id="newClientName" placeholder="PC name (ex: PC-12)" />
+        <input id="newClientHost" placeholder="Optional hostname" />
+        <button id="addClient">Generate Enrollment Code</button>
+        <div id="enrollOut" class="mono"></div>
+      </div>
+
+      <div class="enroll">
+        <div class="title">Audit Notifications</div>
+        <div id="notificationHistory" class="notifications-list"></div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <div class="grid">
+        <div class="panel">
+          <div class="panel-header">
+            <div class="title">Live Logs</div>
+            <button id="loadLogs">Load recent</button>
+          </div>
+          <div id="logs" class="logs"></div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-header">
+            <div class="title">URL Blocking</div>
+          </div>
+          <div class="url-blocking">
+            <div class="row">
+              <input id="newBlockedUrl" placeholder="Pattern (ex: *.github.com)" />
+              <button id="addBlockedUrlBtn">Block</button>
+            </div>
+            <div id="blockedUrlsList" class="blocked-list"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid">
+        <div class="panel">
+          <div class="panel-header">
+            <div class="title">Client Actions</div>
+            <div class="hint">Select a system on the left</div>
+          </div>
+          <div class="actions">
+            <button id="cmdLock" disabled>Lock Screen</button>
+            <button id="cmdExamOn" disabled>Enable Exam Mode</button>
+            <button id="cmdExamOff" disabled>Disable Exam Mode</button>
+            <button id="cmdScreenshot" disabled>📸 Take Screenshot</button>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-header">
+            <div class="title">Bulk Actions (All Online)</div>
+          </div>
+          <div class="actions">
+            <button id="cmdLockAll" class="btn-warning">Lock All</button>
+            <button id="cmdExamOnAll" class="btn-danger">Exam Mode ON</button>
+            <button id="cmdExamOffAll" class="btn-success">Exam Mode OFF</button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <div id="toastContainer" class="toast-container"></div>
+
+  <!-- Screenshot Modal -->
+  <div id="screenshotModal" class="modal" style="display: none;">
+    <div class="modal-content">
+      <div class="panel-header">
+        <div class="title" id="modalTitle">Screenshots</div>
+        <button onclick="closeModal()">Close</button>
+      </div>
+      <div id="screenshotGallery" class="gallery"></div>
+    </div>
+  </div>
+
+  <script src="/static/app.js?v=5"></script>
+</body>
+
+</html>
